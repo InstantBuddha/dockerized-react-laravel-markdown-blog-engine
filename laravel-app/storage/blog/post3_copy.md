@@ -1,5 +1,5 @@
 {
-    "postFileName": "post3.md",
+    "postFileName": "post3_copy.md",
     "title": "Choosing the Right Path",
     "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tellus et augue elementum condimentum.",
     "cover_image": "https://example.com/cover.jpg",

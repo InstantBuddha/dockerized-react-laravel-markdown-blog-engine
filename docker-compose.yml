@@ -26,8 +26,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./laravel-app:/var/www
-      #- ./storage:/var/www/storage
+      - ./laravel-app:/var/www # the blog folder is already included inside the storage folder
       #- ./php.ini:/usr/local/etc/php/php.ini
     ports:
       - "9000:9000"
