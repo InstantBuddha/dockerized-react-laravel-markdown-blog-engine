@@ -13,7 +13,7 @@ class BlogPostRegistryController extends Controller
         $filePath = storage_path('blog/registry.json');
 
         if (!File::exists($filePath)) {
-            return response()->json(['message' => 'Blog post registry not found'], 422);
+            return response()->json(['message' => 'Blog post registry not found'], 404);
         }
 
         $contents = File::get($filePath);

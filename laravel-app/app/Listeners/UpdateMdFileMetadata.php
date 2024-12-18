@@ -29,12 +29,11 @@ class UpdateMdFileMetadata
 
         foreach ($files as $index => $file) {
             error_log("handle: Processing file $index: " . $file->getPathname());
-            // Sanitize the filename
-            $filePath = str_replace(' ', '_', $file->getPathname());
+          
+            $content = File::get($file->getPathname());
+            $filename = $file->getFilename();
 
-            $content = File::get($filePath);
-
-            $metadata = $this->extractMetadata($content, $existingSlugs, $index);
+            $metadata = $this->extractMetadata($content, $existingSlugs, $index, $filename);
 
             $metadataArray[] = $metadata;
             $existingSlugs[] = $metadata['slug'];
@@ -43,7 +42,7 @@ class UpdateMdFileMetadata
         File::put($this->registryFile, json_encode($metadataArray));
     }
 
-    private function extractMetadata(string $content, array $existingSlugs, $index)
+    private function extractMetadata(string $content, array $existingSlugs, $index, $filename)
     {
         // Extract JSON front matter correctly 
         $start = strpos($content, '{');
@@ -57,6 +56,8 @@ class UpdateMdFileMetadata
         }
 
         $metadata['id'] = $index;
+        $metadata['postFileName'] = $filename;
+        
         // add a slug from the title
         $metadata['slug'] = strtolower(str_replace(' ', '-', $metadata['title']));
 

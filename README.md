@@ -7,6 +7,7 @@ A Dockerized blog engine that displays .md files as blog posts using React as fr
     - [Adding api.php](#adding-apiphp)
   - [Add .md blog files](#add-md-blog-files)
   - [Add event listener and the registry for .md blog file data](#add-event-listener-and-the-registry-for-md-blog-file-data)
+  - [Add an api route to serve individual .md blog posts using the slug](#add-an-api-route-to-serve-individual-md-blog-posts-using-the-slug)
 
 ## First start
 1. .env needs to be created with the .env.example
@@ -94,7 +95,7 @@ And in the app folder:
 sudo chown -R yourusername:yourusername ./Console/Commands
 ```
 
-5. The command can be executed manually (inside the container)
+5. **The command can be executed manually (inside the container)**
 ```sh
 php artisan app:update-metadata
 ```
@@ -114,4 +115,27 @@ sudo chown -R yourusername:yourusername ./Http/Controllers
 8. The ready route can be checked at:
 ```
 http://localhost/api/blog-posts-registry
+```
+
+## Add an api route to serve individual .md blog posts using the slug
+
+1. for the api route to work, we need to create a controller:
+```sh
+# sh in to the container:
+docker exec -it laravel-backend sh
+
+# Then create the controller:
+php artisan make:controller BlogPostController
+```
+
+Then, run this inside the app folder to change permissons:
+```bash
+sudo chown -R yourusername:yourusername ./Http/Controllers
+```
+
+2. Add a route in api.php
+3. Test it with these urls:
+```
+localhost/api/the-journey-begins
+localhost/api/blog-post/choosing-the-right-path-3
 ```
