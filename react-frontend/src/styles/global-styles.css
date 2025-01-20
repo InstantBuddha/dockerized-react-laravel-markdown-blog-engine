@@ -1,13 +1,36 @@
-.card-list-container {
-    display: flex;
-    flex-wrap: wrap;
+@import "./global-variables.css";
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--global-background-color);
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0 0 1rem 0;
 }
+
+.card-list-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .excerpt-card-container {
   border: 1px solid #ddd;
   max-width: 15rem;
   margin: 1rem;
   padding: 1rem;
   background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-card {
+  background-color: var(--error-background-color);
+  color: var(--error-text-color);
+  border: 1px solid var(--error-text-color);
+  padding: 1rem;
+  margin: 1rem 0;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

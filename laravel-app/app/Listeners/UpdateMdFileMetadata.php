@@ -39,6 +39,7 @@ class UpdateMdFileMetadata
             $existingSlugs[] = $metadata['slug'];
         }
 
+        $metadataArray = array_reverse($metadataArray);
         File::put($this->registryFile, json_encode($metadataArray));
     }
 
