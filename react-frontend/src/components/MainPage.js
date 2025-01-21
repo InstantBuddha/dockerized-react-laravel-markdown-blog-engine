@@ -7,8 +7,7 @@ import ErrorMessage from "./reuseable/ErrorMessage";
 const MainPage = () => {
     const [posts, setPosts] = useState([]);
     const [errorCode, setErrorCode] = useState(null);
-    const errorMessageText =
-        "There seems to be an error downloading the post registry.";
+    const [errorMessageText, setErrorMessageText] = useState(null);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -16,12 +15,12 @@ const MainPage = () => {
                 const response = await getBlogPostsRegistry();
                 setPosts(response.data);
             } catch (error) {
-                if (error?.response?.status) {
-                    setErrorCode(error.response.status);
-                    scrollToTop();
-                    return;
-                }
-                setErrorCode("Unkown error");
+                setErrorCode(error.response?.status || "Unknown error");
+                setErrorMessageText(
+                    error.response?.data?.message ||
+                        "There seems to be an error downloading the post registry."
+                );
+                scrollToTop();
             }
         };
 
@@ -29,7 +28,7 @@ const MainPage = () => {
     }, []);
 
     return (
-        <div className="card-list-container">
+        <div className="page-wrapper">
             {errorCode ? (
                 <ErrorMessage
                     errorMessageText={errorMessageText}

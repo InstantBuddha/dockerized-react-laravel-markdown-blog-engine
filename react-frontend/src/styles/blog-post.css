@@ -114,3 +114,51 @@
     margin: 1rem 0;
   }
   
+  @media only screen and (orientation: portrait) {
+    .blog-post-container {
+        padding: 1rem;
+        max-width: 98%;
+        margin: 1rem 0;
+        box-sizing: border-box;  /* Ensure padding is included in element width */
+    }
+
+    .blog-post-container h1 {
+        font-size: 1.75em;
+        padding-bottom: 0.75rem;
+    }
+
+    .blog-post-container h2 {
+        font-size: 1.5em;
+        padding-bottom: 0.5rem;
+    }
+
+    .blog-post-container h3 {
+        font-size: 1.25em;
+    }
+
+    .blog-post-container h4 {
+        font-size: 1.1em;
+    }
+
+    .blog-post-container h5 {
+        font-size: 1em;
+    }
+
+    .blog-post-container h6 {
+        font-size: 0.9em;
+    }
+
+    .blog-post-container p, 
+    .blog-post-container li {
+        font-size: 0.95em;  /* Reduce font size for better readability */
+    }
+
+    .blog-post-container pre, 
+    .blog-post-container code {
+        font-size: 0.85em;  /* Reduce font size for better readability */
+    }
+
+    .blog-post-container blockquote {
+        font-size: 0.95em;  /* Reduce font size for better readability */
+    }
+}
