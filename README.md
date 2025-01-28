@@ -8,6 +8,9 @@ A Dockerized blog engine that displays .md files as blog posts using React as fr
   - [Add .md blog files](#add-md-blog-files)
   - [Add event listener and the registry for .md blog file data](#add-event-listener-and-the-registry-for-md-blog-file-data)
   - [Add an api route to serve individual .md blog posts using the slug](#add-an-api-route-to-serve-individual-md-blog-posts-using-the-slug)
+  - [Adding images](#adding-images)
+    - [Supported Characters](#supported-characters)
+    - [Problematic Characters](#problematic-characters)
 
 ## First start
 1. .env needs to be created with the .env.example
@@ -139,3 +142,37 @@ sudo chown -R yourusername:yourusername ./Http/Controllers
 localhost/api/the-journey-begins
 localhost/api/blog-post/choosing-the-right-path-3
 ```
+
+## Adding images
+
+The ./laravel-app/storage/blog/images folder is bind mounted to the Nginx container too (read only, just in case).
+
+```yml
+- ./laravel-app/storage/blog/images:/var/www/public/images:ro # Bind the blog images directory for more efficient image sharing
+```
+
+And served through the location /images/
+
+```conf
+location /images/ {
+  alias /var/www/public/images/;
+  try_files $uri $uri/ /images/NotFound.jpeg;
+}
+```
+
+This means if a file is called `example.jpeg` it will be served at: `http://localhost/images/example.jpg`
+
+As a result, there is a restriction on file names:
+
+### Supported Characters
+- **Alphanumeric Characters**: Letters (A-Z, a-z) and numbers (0-9) are always safe to use.
+- **Hyphens and Underscores**: `-` and `_` are commonly used and supported.
+- **Dots**: `.` can be used, typically to denote file extensions (e.g., `example.jpg`).
+
+### Problematic Characters
+- **Special Characters**: Characters like `!`, `@`, `#`, `$`, `%`, `^`, `&`, `*`, `(`, `)`, `=`, `+`, `{}`, `[`, `]`, `|`, `\`, `:`, `;`, `"`, `'`, `<`, `>`, `,`, `?`, and ` ` (space) can cause issues and **need to be avoided** in filenames.
+- **Spaces**: Spaces are FORBIDDEN. (They must be encoded as `%20` in URLs, which can lead to errors if not handled correctly.)
+- **Reserved Characters**: Characters that have special meanings in URLs, such as `/`, `?`, `#`, and `%`, cannot be used in filenames.
+
+Nevertheless, if an image is not found, nginx will return `NotFound.jpeg` instead of a 404 screen to avoid problems (and cause others, haha).
+
