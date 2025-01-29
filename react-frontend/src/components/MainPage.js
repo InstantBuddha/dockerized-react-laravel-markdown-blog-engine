@@ -5,7 +5,7 @@ import ExcerptCard from "../components/ExcerptCard";
 import ErrorMessage from "./reuseable/ErrorMessage";
 
 const MainPage = () => {
-    const [posts, setPosts] = useState([]);
+    const [postsFrontalMatters, setPostsFrontalMatters] = useState([]);
     const [errorCode, setErrorCode] = useState(null);
     const [errorMessageText, setErrorMessageText] = useState(null);
 
@@ -13,7 +13,7 @@ const MainPage = () => {
         const fetchPosts = async () => {
             try {
                 const response = await getBlogPostsRegistry();
-                setPosts(response.data);
+                setPostsFrontalMatters(response.data);
             } catch (error) {
                 setErrorCode(error.response?.status || "Unknown error");
                 setErrorMessageText(
@@ -36,8 +36,8 @@ const MainPage = () => {
                 />
             ) : (
                 <div className="card-list-container">
-                    {posts.map((post, index) => (
-                        <ExcerptCard index={index} post={post} key={index} />
+                    {postsFrontalMatters.map((postFrontalMatter, index) => (
+                        <ExcerptCard index={index} postFrontalMatter={postFrontalMatter} key={index} />
                     ))}
                 </div>
             )}

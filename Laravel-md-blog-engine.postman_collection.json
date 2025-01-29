@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "45c4e7b3-3df5-43d0-af9d-df76a5d75a4c",
+		"name": "Laravel-md-blog-engine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14315231"
+	},
+	"item": [
+		{
+			"name": "blog-posts-registry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/blog-posts-registry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"blog-posts-registry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ping",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/blog-post/the-journey-begins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/blog-post/the-journey-begins",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"blog-post",
+						"the-journey-begins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/blog-post/choosing-the-right-path-3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/blog-post/choosing-the-right-path-3",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"blog-post",
+						"choosing-the-right-path-3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

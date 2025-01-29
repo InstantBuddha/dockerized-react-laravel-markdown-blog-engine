@@ -7,6 +7,7 @@ A Dockerized blog engine that displays .md files as blog posts using React as fr
     - [Adding api.php](#adding-apiphp)
   - [Add .md blog files](#add-md-blog-files)
   - [Add event listener and the registry for .md blog file data](#add-event-listener-and-the-registry-for-md-blog-file-data)
+  - [Update image registry manually](#update-image-registry-manually)
   - [Add an api route to serve individual .md blog posts using the slug](#add-an-api-route-to-serve-individual-md-blog-posts-using-the-slug)
   - [Adding images](#adding-images)
     - [Supported Characters](#supported-characters)
@@ -118,6 +119,15 @@ sudo chown -R yourusername:yourusername ./Http/Controllers
 8. The ready route can be checked at:
 ```
 http://localhost/api/blog-posts-registry
+```
+
+## Update image registry manually
+
+```sh
+# sh in:
+docker exec -it laravel-backend sh
+# Then run:
+php artisan app:update-metadata
 ```
 
 ## Add an api route to serve individual .md blog posts using the slug

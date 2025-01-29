@@ -40,7 +40,8 @@ const BlogPost = () => {
             } catch (error) {
                 setErrorCode(error.response?.status || "Unknown error");
                 setContent(
-                    error.response?.data?.message || "Error loading post content"
+                    error.response?.data?.message ||
+                        "Error loading post content"
                 );
                 scrollToTop();
             }
@@ -63,6 +64,13 @@ const BlogPost = () => {
                     />
                 ) : (
                     <>
+                        {metadata.cover_image && (
+                            <img
+                                src={metadata.cover_image}
+                                alt={`${metadata.title} cover`}
+                                className="blog-post-cover-image"
+                            />
+                        )}
                         <ReactMarkDown>{content}</ReactMarkDown>
                         {metadata && (
                             <>

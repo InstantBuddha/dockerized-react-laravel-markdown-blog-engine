@@ -8,6 +8,15 @@
     text-align: left;
   }
 
+  .blog-post-cover-image {
+    width: 100%;
+    height: auto;
+    max-height: 25rem; 
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
   .blog-post-container h1,
   .blog-post-container h2,
   .blog-post-container h3,

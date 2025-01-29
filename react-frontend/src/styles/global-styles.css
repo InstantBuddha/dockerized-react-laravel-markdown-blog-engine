@@ -25,6 +25,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.excerpt-card-cover-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
 .error-card {
     background-color: var(--error-background-color);
     color: var(--error-text-color);
@@ -46,7 +54,7 @@
     }
 
     .error-card {
-      max-width: 98%;
-      margin: 0 0.5rem;
+        max-width: 98%;
+        margin: 0 0.5rem;
     }
 }
