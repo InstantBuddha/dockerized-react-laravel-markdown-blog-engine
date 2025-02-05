@@ -29,7 +29,7 @@ class UpdateMdFileMetadata
 
         foreach ($files as $index => $file) {
             error_log("handle: Processing file $index: " . $file->getPathname());
-          
+
             $content = File::get($file->getPathname());
             $filename = $file->getFilename();
 
@@ -39,7 +39,11 @@ class UpdateMdFileMetadata
             $existingSlugs[] = $metadata['slug'];
         }
 
-        $metadataArray = array_reverse($metadataArray);
+        // Sort metadataArray by creation_date in descending order
+        usort($metadataArray, function ($a, $b) {
+            return strtotime($b['creation_date']) - strtotime($a['creation_date']);
+        });
+
         File::put($this->registryFile, json_encode($metadataArray));
     }
 
@@ -58,7 +62,7 @@ class UpdateMdFileMetadata
 
         $metadata['id'] = $index;
         $metadata['postFileName'] = $filename;
-        
+
         // add a slug from the title
         $metadata['slug'] = strtolower(str_replace(' ', '-', $metadata['title']));
 

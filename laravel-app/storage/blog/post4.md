@@ -5,7 +5,8 @@
     "cover_image": "http://localhost/images/IDontExist.jpg",
     "postHashTags": ["#newbeginnings", "#adventure", "#growth"],
     "author": "Alex Doe",
-    "slug": "embracing-new-horizons"
+    "slug": "embracing-new-horizons",
+    "creation_date": "2025-02-05T13:41:00"
 }
 
 # Embracing the New Horizons

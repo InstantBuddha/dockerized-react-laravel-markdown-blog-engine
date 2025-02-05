@@ -5,7 +5,8 @@
     "cover_image": "http://localhost/images/Blog.jpeg",
     "postHashTags": ["#journey", "#adventure", "#firststeps"],
     "author": "John Doe",
-    "slug": "the-journey-begins"
+    "slug": "the-journey-begins",
+    "creation_date": "2024-02-05T13:40:00"
 }
 
 # The Journey Begins

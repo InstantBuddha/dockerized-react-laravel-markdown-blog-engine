@@ -5,7 +5,8 @@
     "cover_image": "http://localhost/images/Waterfall.jpg",
     "postHashTags": ["#roads", "#choices", "#growth"],
     "author": "Alice Johnson",
-    "slug": "choosing-the-right-path"
+    "slug": "choosing-the-right-path",
+    "creation_date": "2025-02-05T13:40:00"
 }
   
 # The Road Less Traveled

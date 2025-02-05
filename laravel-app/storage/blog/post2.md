@@ -5,7 +5,8 @@
     "cover_image": "http://localhost/images/library.jpg",
     "postHashTags": ["#exploration", "#challenges", "#unknown"],
     "author": "Jane Smith",
-    "slug": "exploring-new-challenges"
+    "slug": "exploring-new-challenges",
+    "creation_date": "2024-12-05T13:40:00"
 }
   
 # Exploring the Unknown

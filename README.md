@@ -7,11 +7,12 @@ A Dockerized blog engine that displays .md files as blog posts using React as fr
     - [Adding api.php](#adding-apiphp)
   - [Add .md blog files](#add-md-blog-files)
   - [Add event listener and the registry for .md blog file data](#add-event-listener-and-the-registry-for-md-blog-file-data)
-  - [Update image registry manually](#update-image-registry-manually)
+  - [Update metadata registry manually](#update-metadata-registry-manually)
   - [Add an api route to serve individual .md blog posts using the slug](#add-an-api-route-to-serve-individual-md-blog-posts-using-the-slug)
   - [Adding images](#adding-images)
     - [Supported Characters](#supported-characters)
     - [Problematic Characters](#problematic-characters)
+  - [TODO:](#todo)
 
 ## First start
 1. .env needs to be created with the .env.example
@@ -121,7 +122,7 @@ sudo chown -R yourusername:yourusername ./Http/Controllers
 http://localhost/api/blog-posts-registry
 ```
 
-## Update image registry manually
+## Update metadata registry manually
 
 ```sh
 # sh in:
@@ -186,3 +187,5 @@ As a result, there is a restriction on file names:
 
 Nevertheless, if an image is not found, nginx will return `NotFound.jpeg` instead of a 404 screen to avoid problems (and cause others, haha).
 
+## TODO:
+Automated Validation: Integrate a linter or CI/CD pipeline that checks for valid front matter before files are processed.
