@@ -10,6 +10,7 @@ const ExcerptCard = ({ index, postFrontalMatter }) => {
                         src={postFrontalMatter.cover_image}
                         alt={`${postFrontalMatter.title} cover`}
                         className="excerpt-card-cover-image"
+                        loading="lazy"
                     />
                 )}
             </Link>

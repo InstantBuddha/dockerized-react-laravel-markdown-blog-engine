@@ -11,11 +11,16 @@ export const AXIOS_CREATE_CONFIG = {
     },
 };
 
-export async function getBlogPostsRegistry() {
+export async function getBlogPostsRegistry(page = 1, perPage = 10) {
     const apiUrl = `${API_BASE_URL}/blog-posts-registry`;
 
     try {
-        const response = await axios.get(apiUrl);
+        const response = await axios.get(apiUrl, {
+            params: {
+                page: page,
+                per_page: perPage,
+            },
+        });
         return response;
     } catch (error) {
         throw error;

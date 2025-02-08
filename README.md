@@ -12,6 +12,8 @@ A Dockerized blog engine that displays .md files as blog posts using React as fr
   - [Adding images](#adding-images)
     - [Supported Characters](#supported-characters)
     - [Problematic Characters](#problematic-characters)
+  - [Frontend](#frontend)
+  - [Duplicate api call issue in development](#duplicate-api-call-issue-in-development)
   - [TODO:](#todo)
 
 ## First start
@@ -187,5 +189,20 @@ As a result, there is a restriction on file names:
 
 Nevertheless, if an image is not found, nginx will return `NotFound.jpeg` instead of a 404 screen to avoid problems (and cause others, haha).
 
+## Frontend
+
+React infinite scroll component is needed for the project. Sh into the container and then run:
+```sh
+npm install react-infinite-scroll-component
+```
+
+## Duplicate api call issue in development
+
+Because of React StrictMode, the api call is sent twice initially. Comment out the StrictMode to get rid of the problem.
+
 ## TODO:
-Automated Validation: Integrate a linter or CI/CD pipeline that checks for valid front matter before files are processed.
+- Automated Validation: Integrate a linter or CI/CD pipeline that checks for valid front matter before files are processed.
+
+- In frontend add case if BlogPostRegistryController.php sends 404 error
+
+- Make code more resource efficient!
