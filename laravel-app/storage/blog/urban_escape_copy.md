@@ -1,5 +1,4 @@
 {
-    "postFileName": "urban_escape_copy.md",
     "title": "Urban Escape",
     "excerpt": "Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.",
     "cover_image": "http://localhost/images/City.jpeg",

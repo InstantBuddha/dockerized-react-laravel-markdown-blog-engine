@@ -1,5 +1,4 @@
 {
-    "postFileName": "post1.md",
     "title": "The Journey Begins",
     "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tellus et augue elementum condimentum. Nunc varius leo eu orci pellentesque, ac pulvinar urna blandit. Maecenas facilisis, magna et finibus eleifend, dolor tellus convallis velit, rhoncus rutrum ex ipsum porta augue. Suspendisse placerat, urna eu maximus iaculis, tortor elit porta nisl, vulputate consequat odio lacus ac turpis.",
     "cover_image": "http://localhost/images/Blog.jpeg",

@@ -1,5 +1,4 @@
 {
-    "postFileName": "sunset_vista.md",
     "title": "Sunset Vista",
     "excerpt": "Phasellus porta, lorem sit amet congue consectetur, arcu est tempor ex, in finibus ligula neque nec ligula.",
     "cover_image": "http://localhost/images/Sunset.jpeg",

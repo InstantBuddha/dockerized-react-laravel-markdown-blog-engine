@@ -1,5 +1,4 @@
 {
-    "postFileName": "culinary_delights.md",
     "title": "Culinary Delights",
     "excerpt": "Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
     "cover_image": "http://localhost/images/Food.jpeg",

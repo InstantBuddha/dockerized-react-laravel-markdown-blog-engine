@@ -1,5 +1,4 @@
-{
-    "postFileName": "coding_journey.md",
+{   
     "title": "The Coding Journey",
     "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     "cover_image": "http://localhost/images/Coding.jpeg",

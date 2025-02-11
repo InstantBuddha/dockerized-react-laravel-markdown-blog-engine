@@ -13,16 +13,18 @@
 .card-list-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .excerpt-card-container {
     border: 1px solid #ddd;
-    max-width: 15rem;
+    max-width: 16rem;
     margin: 1rem;
     padding: 1rem;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /*height:fit-content;*/
 }
 
 .excerpt-card-cover-image {

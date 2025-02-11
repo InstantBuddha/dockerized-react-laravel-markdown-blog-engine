@@ -1,14 +1,14 @@
 {
-    "title": "Starry Nights",
-    "excerpt": "Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla.",
+    "title": "File with error",
+    "excerpt": "File with date error.",
     "cover_image": "http://localhost/images/NightSky.jpeg",
     "postHashTags": ["#stargazing", "#night", "#calm"],
     "author": "David Lee",
     "slug": "starry-nights",
-    "creation_date": "2024-09-22T21:10:00"
+    "creation_date": "2024"
 }
 
-# Starry Nights
+# File with error
 
 Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla.
 

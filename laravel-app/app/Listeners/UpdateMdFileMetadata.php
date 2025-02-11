@@ -33,10 +33,14 @@ class UpdateMdFileMetadata
             $content = File::get($file->getPathname());
             $filename = $file->getFilename();
 
-            $metadata = $this->extractMetadata($content, $existingSlugs, $index, $filename);
-
-            $metadataArray[] = $metadata;
-            $existingSlugs[] = $metadata['slug'];
+            try {
+                $metadata = $this->extractMetadata($content, $existingSlugs, $index, $filename);
+                $metadataArray[] = $metadata;
+                $existingSlugs[] = $metadata['slug'];
+            } catch (\Exception $e) {
+                error_log("Error processing file $index: " . $e->getMessage());
+                continue;
+            }
         }
 
         // Sort metadataArray by creation_date in descending order
@@ -57,7 +61,27 @@ class UpdateMdFileMetadata
 
         // Check if json_decode was successful 
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new \Exception('Error decoding JSON: ' . json_last_error_msg());
+            throw new \Exception("\033[31mError decoding JSON:  \033[33m" . json_last_error_msg() . "\033[0m");
+        }
+
+        // Extract the content after JSON front matter and match any non-whitespace character
+        $remainingContent = substr($content, $end);
+        if (!preg_match('/\S/', $remainingContent)) {
+            throw new \Exception("\033[31mError: Markdown file contains no content beyond the front matter.\033[0m");
+        }
+
+        // Check and fill in missing metadata
+        $requiredFields = ['title', 'creation_date'];
+        foreach ($requiredFields as $field) {
+            if (empty($metadata[$field])) {
+                throw new \Exception("\033[31mMissing required field: \033[33m" . $field . "\033[0m");
+            }
+        }
+
+        // Validate creation_date format using DateTime
+        $date = \DateTime::createFromFormat('Y-m-d\TH:i:s', $metadata['creation_date']);
+        if (!$date || $date->format('Y-m-d\TH:i:s') !== $metadata['creation_date']) {
+            throw new \Exception("\033[31mInvalid creation_date format: \033[33m" . $metadata['creation_date'] . "\033[0m");
         }
 
         $metadata['id'] = $index;

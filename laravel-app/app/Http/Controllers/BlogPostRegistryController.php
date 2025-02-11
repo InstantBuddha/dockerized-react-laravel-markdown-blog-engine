@@ -37,7 +37,7 @@ class BlogPostRegistryController extends Controller
         // Calculate total number of pages
         $totalPosts = count($blogPostRegistry);
         $totalPages = ceil($totalPosts / $perPage);
-
+        
         // Prepare response with pagination metadata
         return response()->json([
             'data' => $postsForPage,

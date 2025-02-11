@@ -1,5 +1,4 @@
 {
-    "postFileName": "post4.md",
     "title": "Embracing New Horizons",
     "excerpt": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     "cover_image": "http://localhost/images/IDontExist.jpg",

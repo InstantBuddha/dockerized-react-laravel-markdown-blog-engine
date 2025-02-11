@@ -202,7 +202,3 @@ Because of React StrictMode, the api call is sent twice initially. Comment out t
 
 ## TODO:
 - Automated Validation: Integrate a linter or CI/CD pipeline that checks for valid front matter before files are processed.
-
-- In frontend add case if BlogPostRegistryController.php sends 404 error
-
-- Make code more resource efficient!
