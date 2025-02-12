@@ -1,7 +1,7 @@
 {   
     "title": "The Coding Journey",
     "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    "cover_image": "http://localhost/images/Coding.jpeg",
+    "cover_image": "http://localhost/images/512px-Bookshelf_(Chaekgado),_19th_century,_Joseon_dynasty,_MFAB_1984.824a-d_(1_of_4).jpeg",
     "postHashTags": ["#coding", "#programming", "#learning"],
     "author": "Sarah Brown",
     "slug": "the-coding-journey",

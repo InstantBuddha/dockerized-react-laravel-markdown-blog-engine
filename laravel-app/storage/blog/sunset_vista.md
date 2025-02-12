@@ -1,7 +1,7 @@
 {
     "title": "Sunset Vista",
     "excerpt": "Phasellus porta, lorem sit amet congue consectetur, arcu est tempor ex, in finibus ligula neque nec ligula.",
-    "cover_image": "http://localhost/images/Sunset.jpeg",
+    "cover_image": "http://localhost/images/Le_Penseur_Musée_Rodin_Paris_S.1295.jpg",
     "postHashTags": ["#sunset", "#nature", "#peace"],
     "author": "Emily White",
     "slug": "sunset-vista",

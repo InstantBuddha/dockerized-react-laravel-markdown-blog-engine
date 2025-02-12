@@ -1,7 +1,7 @@
 {
     "title": "Urban Escape",
     "excerpt": "Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.",
-    "cover_image": "http://localhost/images/City.jpeg",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/767px-The_Earth_seen_from_Apollo_17.jpg",
     "postHashTags": ["#citylife", "#escape", "#adventure"],
     "author": "Michael Green",
     "slug": "urban-escape",
@@ -10,7 +10,7 @@
 
 # Urban Escape
 
-Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+I have a wikipedia link as cover image
 
 ## Discovering Hidden Gems
 

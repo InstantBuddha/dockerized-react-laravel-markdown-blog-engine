@@ -1,4 +1,6 @@
 .blog-post-container {
+    width: 98%;
+    max-width: 100%;
     margin: 1rem auto;
     padding: 1rem;
     background-color: #f9f9f9;
@@ -6,130 +8,128 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
     text-align: left;
-  }
+    box-sizing: border-box;
+}
 
-  .blog-post-cover-image {
+.blog-post-cover-image {
     width: 100%;
     height: auto;
-    max-height: 25rem; 
+    max-height: 25rem;
     object-fit: contain;
     border-radius: 10px;
     margin-bottom: 1rem;
-  }
+}
 
-  .blog-post-container h1,
-  .blog-post-container h2,
-  .blog-post-container h3,
-  .blog-post-container h4,
-  .blog-post-container h5,
-  .blog-post-container h6 {
+.blog-post-container h1,
+.blog-post-container h2,
+.blog-post-container h3,
+.blog-post-container h4,
+.blog-post-container h5,
+.blog-post-container h6 {
     color: #333;
     margin-bottom: 1rem;
-  }
-  
-  .blog-post-container h1 {
+}
+
+.blog-post-container h1 {
     font-size: 2em;
     border-bottom: 2px solid #ddd;
     padding-bottom: 1rem;
-  }
-  
-  .blog-post-container h2 {
+}
+
+.blog-post-container h2 {
     font-size: 1.75em;
     border-bottom: 1px solid #ddd;
     padding-bottom: 0.5rem;
-  }
-  
-  .blog-post-container h3 {
+}
+
+.blog-post-container h3 {
     font-size: 1.5em;
-  }
-  
-  .blog-post-container h4 {
+}
+
+.blog-post-container h4 {
     font-size: 1.25em;
-  }
-  
-  .blog-post-container h5 {
+}
+
+.blog-post-container h5 {
     font-size: 1.1em;
-  }
-  
-  .blog-post-container h6 {
+}
+
+.blog-post-container h6 {
     font-size: 1em;
     color: #555;
-  }
+}
 
-  .blog-post-container p {
+.blog-post-container p {
     color: #555;
     line-height: 1.6;
     margin-bottom: 1rem;
-  }
-  
-  .blog-post-container ul,
-  .blog-post-container ol {
+}
+
+.blog-post-container ul,
+.blog-post-container ol {
     margin: 1rem 0;
     padding-left: 2rem;
-  }
-  
-  .blog-post-container li {
+}
+
+.blog-post-container li {
     margin-bottom: 1rem;
     color: #333;
-  }
+}
 
-  .blog-post-container a {
+.blog-post-container a {
     color: #1e90ff;
     text-decoration: none;
     transition: color 0.3s;
-  }
-  
-  .blog-post-container a:hover {
+}
+
+.blog-post-container a:hover {
     color: #0056b3;
     text-decoration: underline;
-  }
+}
 
-  .blog-post-container blockquote {
+.blog-post-container blockquote {
     border-left: 5px solid #ddd;
     padding-left: 1rem;
     color: #666;
     margin: 1rem 0;
     font-style: italic;
-  }
-  
-  /* Code blocks */
-  .blog-post-container pre {
+}
+
+/* Code blocks */
+.blog-post-container pre {
     background-color: #f5f5f5;
     padding: 15px;
     border-radius: 5px;
     overflow-x: auto;
     margin-bottom: 1rem;
-  }
-  
-  .blog-post-container code {
+}
+
+.blog-post-container code {
     background-color: #f5f5f5;
     padding: 2px 5px;
     border-radius: 3px;
     font-family: "Courier New", Courier, monospace;
     font-size: 0.95em;
-  }
+}
 
-  .blog-post-container img {
+.blog-post-container img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
     margin: 1rem 0;
-  }
-  
-  .blog-post-container hr {
+}
+
+.blog-post-container hr {
     border: 0;
     height: 1px;
     background: #ddd;
     margin: 1rem 0;
-  }
-  
-  @media only screen and (orientation: portrait) {
+}
+
+@media only screen and (orientation: portrait) {
     .blog-post-container {
-        padding: 1rem;
-        max-width: 98%;
         margin: 1rem 0;
-        box-sizing: border-box;  /* Ensure padding is included in element width */
-    }
+      }
 
     .blog-post-container h1 {
         font-size: 1.75em;
@@ -157,17 +157,17 @@
         font-size: 0.9em;
     }
 
-    .blog-post-container p, 
+    .blog-post-container p,
     .blog-post-container li {
-        font-size: 0.95em;  /* Reduce font size for better readability */
+        font-size: 0.95em; /* Reduce font size for better readability */
     }
 
-    .blog-post-container pre, 
+    .blog-post-container pre,
     .blog-post-container code {
-        font-size: 0.85em;  /* Reduce font size for better readability */
+        font-size: 0.85em; /* Reduce font size for better readability */
     }
 
     .blog-post-container blockquote {
-        font-size: 0.95em;  /* Reduce font size for better readability */
+        font-size: 0.95em; /* Reduce font size for better readability */
     }
 }
