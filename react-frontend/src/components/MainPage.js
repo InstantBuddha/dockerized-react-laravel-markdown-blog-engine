@@ -22,13 +22,19 @@ const MainPage = () => {
     const fetchPosts = async (page) => {
         try {
             const response = await getBlogPostsRegistry(page, perPage);
-            const data = response.data;
+            
+            if (response.data && response.data.data) {
+                const data = response.data;
 
-            // Append new posts to existing ones
-            setPostsFrontalMatters((prevPosts) => [...prevPosts, ...data.data]);
+                setPostsFrontalMatters((prevPosts) => [
+                    ...prevPosts,
+                    ...data.data,
+                ]);
 
-            // Update hasMore based on total pages
-            setHasMore(page < data.total_pages);
+                setHasMore(page < data.total_pages);
+            } else {
+                throw new Error("Unexpected response structure from backend.");
+            }
         } catch (error) {
             setErrorCode(error.response?.status || "Unknown error");
             setErrorMessageText(

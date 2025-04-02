@@ -1,0 +1,20 @@
+# Use an official Node.js image as the base image
+FROM node:21-alpine AS build
+
+# Set the working directory
+WORKDIR /react-frontend
+
+# Copy package.json and package-lock.json
+COPY /react-frontend/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the application code
+COPY /react-frontend .
+
+# Build the React application
+RUN npm run build
+
+FROM nginx:1.26.3-alpine
+COPY --from=build /react-frontend/build /usr/share/nginx/html

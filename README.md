@@ -14,7 +14,6 @@ A Dockerized blog engine that displays .md files as blog posts using React as fr
     - [Problematic Characters](#problematic-characters)
   - [Frontend](#frontend)
   - [Duplicate api call issue in development](#duplicate-api-call-issue-in-development)
-  - [TODO:](#todo)
 
 ## First start
 1. .env needs to be created with the .env.example
@@ -199,6 +198,3 @@ npm install react-infinite-scroll-component
 ## Duplicate api call issue in development
 
 Because of React StrictMode, the api call is sent twice initially. Comment out the StrictMode to get rid of the problem.
-
-## TODO:
-- Automated Validation: Integrate a linter or CI/CD pipeline that checks for valid front matter before files are processed.
